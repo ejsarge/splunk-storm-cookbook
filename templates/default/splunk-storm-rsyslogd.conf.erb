@@ -1,0 +1,3 @@
+
+# Configures all log traffice to go the the Splunk Storm log host
+*.* @@<%= node["splunk-storm"]["log_host"]["address"] %>:<%= node["splunk-storm"]["log_host"]["port"] %>
