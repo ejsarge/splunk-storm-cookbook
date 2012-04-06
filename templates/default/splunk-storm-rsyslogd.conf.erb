@@ -1,3 +1,7 @@
 
-# Configures all log traffice to go the the Splunk Storm log host
+# Listen on udp to collect output from logback SyslogAppender
+$modload imudp
+$UDPServerRun 514
+
+# Configures all log traffic to go the the Splunk Storm log host
 *.* @@<%= node["splunk-storm"]["log_host"]["address"] %>:<%= node["splunk-storm"]["log_host"]["port"] %>
